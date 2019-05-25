@@ -1,0 +1,127 @@
+<template>
+           <nav class="main-menu">
+            <ul>
+                 <li v-for="(item ,index) in items" :key="index">
+                     <router-link :to="{name: item.router}">
+                        <i :class="item.iClass"></i>
+                        <span class="nav-text">
+                            {{ item.text }}
+                        </span>
+                    </router-link>
+                </li>
+                <!-- 
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            Forms
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">
+                            Pages
+                        </span>
+                    </a>
+                   
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            Graphs and Statistics
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                           Quotes
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="#">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            Tables
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="#">
+                        <i class="fa fa-map-marker fa-2x"></i>
+                        <span class="nav-text">
+                            Maps
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            Documentation
+                        </span>
+                    </a>
+                </li>
+              -->
+
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <router-link :to="{name:'login'}"  v-on:click.native="logout">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            登出
+                        </span>
+                   </router-link>
+                </li>  
+            </ul> 
+        </nav>      
+</template>
+
+<script>
+export default {
+    data () {
+        return {
+            items: [
+                {
+                    router: "home",
+                    iClass:'fa fa-home fa-2x',
+                    text:'首頁',
+                },
+                {
+                    router: "barcode",
+                    iClass:'fa fa-barcode fa-2x',
+                    text:'工單',
+                },
+                {
+                    router: "",
+                    iClass:'fa fa-star fa-2x',
+                    text:'',
+                },
+                {
+                    router: "",
+                    iClass:'fa fa-fire fa-2x',
+                    text:'',
+                },
+                 {
+                    router: "",
+                    iClass:'fa fa-leaf fa-2x',
+                    text:'',
+                }
+            ]
+        }
+    },
+    methods: {
+        logout(){
+            // localStorage.removeItem('user')
+        }
+    }
+}
+</script>

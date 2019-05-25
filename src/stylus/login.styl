@@ -1,0 +1,85 @@
+//登入頁面框
+
+$original-color = #248f81
+$base-color = #fff
+
+/* do not group these rules */
+*::-webkit-input-placeholder {
+    color: $original-color
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: $original-color
+    opacity: 1
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: $original-color
+    opacity: 1
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $original-color
+}
+*::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $original-color
+}
+*::placeholder {
+    /* modern browser */
+    color: $original-color
+}
+
+.login-panel{
+    width: 480px
+    height: 480px
+    margin-top: 50px
+    // background-color: #152330
+    -webkit-box-sizing: border-box /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box    /* Firefox, other Gecko */
+    box-sizing: border-box         /* Opera/IE 8+ */
+    
+    //輸入框
+    input,img{
+        margin-top:5%
+        border-radius: 0px
+    }
+
+    //登入按鈕
+    button{
+        bottom: 0
+        right: 0
+        border-radius: 0px
+        position: absolute
+        background-color: $base-color
+        color: $original-color
+        font-weight: 500
+        border-radius: 20px
+    }
+
+    button:hover{
+        background-color: $base-color
+        color: $original-color
+    }
+        
+    .invalid-feedback{
+        margin-top: 0px
+        background-color: #ff1744
+        padding: 5px    
+        color: $base-color
+        font-size: 18px
+    }
+
+    
+
+}
+//警告 snackbar
+.alert{
+    top: 0
+    right: 0
+    width: 100%
+    border-radius: 0px
+    position: absolute
+    text-align: center
+}
+    

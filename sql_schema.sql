@@ -1,9 +1,42 @@
-CREATE TABLE `countries` (
-`id` int(11) NOT NULL auto_increment,
-`country_code` varchar(2) NOT NULL default '',
-`country_name` varchar(100) NOT NULL default '',
-PRIMARY KEY (`id`)
+CREATE TABLE `countries`
+(
+`id` int
+(11) NOT NULL auto_increment,
+`country_code` varchar
+(2) NOT NULL default '',
+`country_name` varchar
+(20) NOT NULL default '',
+`currency_name` varchar
+(10) NOT NULL default '',
+PRIMARY KEY
+(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `
+countries`
+VALUES
+    (null, 'KR', '韓國', 'KRW');
+INSERT INTO `
+countries`
+VALUES
+    (null, 'JP', '日本', 'JPY');
+INSERT INTO `
+countries`
+VALUES
+    (null, 'CN', '中國', 'CNY');
+INSERT INTO `
+countries`
+VALUES
+    (null, 'PH', '菲律賓', 'PHP');
+INSERT INTO `
+countries`
+VALUES
+    (null, 'TH', '泰國', 'THB');
+INSERT INTO `
+countries`
+VALUES
+    (null, 'US', '美國', 'USD');
 
 INSERT INTO `countries` VALUES (null, 'AF', '阿富汗');
 INSERT INTO `countries` VALUES (null, 'AL', '阿爾巴尼亞');
@@ -48,7 +81,6 @@ INSERT INTO `countries` VALUES (null, 'KY', '開曼群島');
 INSERT INTO `countries` VALUES (null, 'CF', '中非共和國');
 INSERT INTO `countries` VALUES (null, 'TD', '乍得');
 INSERT INTO `countries` VALUES (null, 'CL', '智利');
-INSERT INTO `countries` VALUES (null, 'CN', '中國');
 INSERT INTO `countries` VALUES (null, 'CX', '聖誕島');
 INSERT INTO `countries` VALUES (null, 'CC', '科科斯（基林）群島');
 INSERT INTO `countries` VALUES (null, 'CO', '哥倫比亞');
@@ -114,13 +146,13 @@ INSERT INTO `countries` VALUES (null, 'IT', '意大利');
 INSERT INTO `countries` VALUES (null, 'CI', '象牙海岸');
 INSERT INTO `countries` VALUES (null, 'JE', '新澤西');
 INSERT INTO `countries` VALUES (null, 'JM', '牙買加');
-INSERT INTO `countries` VALUES (null, 'JP', '日本');
+
 INSERT INTO `countries` VALUES (null, 'JO', '約旦');
 INSERT INTO `countries` VALUES (null, 'KZ', '哈薩克斯坦');
 INSERT INTO `countries` VALUES (null, 'KE', '肯尼亞');
 INSERT INTO `countries` VALUES (null, 'KI', '基里巴斯');
 INSERT INTO `countries` VALUES (null, 'KP', '朝鮮民主主義人民共和國');
-INSERT INTO `countries` VALUES (null, 'KR', '韓國共和國');
+
 INSERT INTO `countries` VALUES (null, 'XK', '科索沃');
 INSERT INTO `countries` VALUES (null, 'KW', '科威特');
 INSERT INTO `countries` VALUES (null, 'KG', '吉爾吉斯斯坦');
@@ -178,7 +210,6 @@ INSERT INTO `countries` VALUES (null, 'PA', '巴拿馬');
 INSERT INTO `countries` VALUES (null, 'PG', '巴布亞新幾內亞');
 INSERT INTO `countries` VALUES (null, 'PY', '巴拉圭');
 INSERT INTO `countries` VALUES (null, 'PE', '秘魯');
-INSERT INTO `countries` VALUES (null, 'PH', '菲律賓');
 INSERT INTO `countries` VALUES (null, 'PN', '皮特凱恩');
 INSERT INTO `countries` VALUES (null, 'PL', '波蘭');
 INSERT INTO `countries` VALUES (null, 'PT', '葡萄牙');
@@ -221,7 +252,6 @@ INSERT INTO `countries` VALUES (null, 'SY', '阿拉伯敘利亞共和國');
 INSERT INTO `countries` VALUES (null, 'TW', '台灣');
 INSERT INTO `countries` VALUES (null, 'TJ', '塔吉克斯坦');
 INSERT INTO `countries` VALUES (null, 'TZ', '坦桑尼亞聯合共和國');
-INSERT INTO `countries` VALUES (null, 'TH', '泰國');
 INSERT INTO `countries` VALUES (null, 'TG', '多哥');
 INSERT INTO `countries` VALUES (null, 'TK', '托克勞');
 INSERT INTO `countries` VALUES (null, 'TO', '湯加');
@@ -235,7 +265,6 @@ INSERT INTO `countries` VALUES (null, 'UG', '烏干達');
 INSERT INTO `countries` VALUES (null, 'UA', '烏克蘭');
 INSERT INTO `countries` VALUES (null, 'AE', '阿聯酋');
 INSERT INTO `countries` VALUES (null, 'GB', '英國');
-INSERT INTO `countries` VALUES (null, 'US', '美國');
 INSERT INTO `countries` VALUES (null, 'UM', '美國小型離島');
 INSERT INTO `countries` VALUES (null, 'UY', '烏拉圭');
 INSERT INTO `countries` VALUES (null, 'UZ', '烏茲別克斯坦');
@@ -442,7 +471,6 @@ PRIMARY KEY
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDSTN', '21.875','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDRON', '4.213825','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDXPT', '0.00121952','2019-06-04 14:59:59');
-    insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDCNY', '6.909','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDTZS', '2295.505945','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDAMD', '479.374044','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDUSD', '1','2019-06-04 14:59:59');
@@ -477,7 +505,6 @@ PRIMARY KEY
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDCDF', '1659','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDGBP', '0.788914','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDXPD', '0.00074435','2019-06-04 14:59:59');
-    insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDPHP', '51.825','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDXDR', '0.719454','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDTJS', '9.434859','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDMOP', '8.072724','2019-06-04 14:59:59');
@@ -501,10 +528,9 @@ PRIMARY KEY
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDIDR', '14224','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDLTC', '0.2607561929595828','2018-08-02 21:56:02');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDMAD', '9.667','2019-06-04 14:59:59');
-    insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDKRW', '1182','2019-06-04 14:59:59');
+    
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDBZD', '2.015199','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDCVE', '98.8425','2019-06-04 14:59:59');
-    insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDTWD', '31.434787','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDAED', '3.673281','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDRWF', '905','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDBGN', '1.741548','2019-06-04 14:59:59');
@@ -525,13 +551,12 @@ PRIMARY KEY
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDXPF', '106.239905','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDDJF', '178.05','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDEUR', '0.89029','2019-06-04 14:59:59');
-    insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDTHB', '31.3585','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDALL', '108.77','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDANG', '1.874611','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDBRL', '3.86735','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDUGX', '3767.132341','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDMRO', '357','2019-06-04 14:59:59');
-    insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDJPY', '108.32966667','2019-06-04 14:59:59');
+    
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDZAR', '14.703683','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDTND', '2.998118','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDSAR', '3.750123','2019-06-04 14:59:59');
@@ -560,386 +585,211 @@ PRIMARY KEY
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDHTG', '92.592302','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDMGA', '3670','2019-06-04 14:59:59');
     insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDFKP', '0.788914','2019-06-04 14:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCUC', '1','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDPHP', '51.7055','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDINR', '69.15691','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDFKP', '0.787687','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDITL', '1700.272217','2017-02-24 19:34:31');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGHS', '5.350427','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDNAD', '14.859434','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSTD', '21050.59961','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCNY', '6.9098','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDPEN', '3.337966','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCHF', '0.991417','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDAED', '3.673181','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDUGX', '3758.781265','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBBD', '2','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKES', '101.16','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDECS', '25000','2017-02-24 19:27:22');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDHUX', '274.959991','2018-08-01 10:30:05');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDHTG', '91.852387','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGBP', '0.787687','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTZS', '2299.2','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDXOF', '581.780045','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLRD', '193.750097','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDDEM', '1.71745','2015-06-22 07:35:00');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDEUR', '0.886918','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGEL', '2.735','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSEK', '9.420717','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTHB', '31.3','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCDF', '1642.05248','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDNOK', '8.6978','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDAFN', '79.809','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDVEF', '248487.642241','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDVES', '5906.500631','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMVR', '15.400026','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDWST', '2.615465','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGTQ', '7.691784','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSDG', '44.942172','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDHNL', '24.383472','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLKR', '175.759249','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDRWF', '905.752975','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDXPD', '0.00073966','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGIP', '0.787687','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTND', '2.989669','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBSD', '1','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTRY', '5.7878','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCUP', '25.75','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLYD', '1.39479','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDDOP', '50.245811','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKHR', '4066.082541','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTJS', '9.406067','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSVC', '8.717903','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBDT', '84.22283','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDDKK', '6.623185','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('PALLADIUM1OZ', '0.001099','2018-08-02 07:58:38');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBMD', '1','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSOS', '576.370572','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBND', '1.350697','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSGD', '1.364161','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSCR', '13.680497','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMAD', '9.652403','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDRSD', '104.546739','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDAZN', '1.7025','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKYD', '0.830287','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDZMW', '13.306499','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSZL', '14.859512','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLTL', '3.0487','2015-06-22 08:39:00');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSYP', '514.98668','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDFRF', '1700.272217','2017-02-27 21:21:09');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMDL', '18.062045','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDDJF', '178.05','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTWD', '31.3299','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDHUF', '284.623','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCNH', '6.926316','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMXV', '3.079749','2018-08-01 13:30:00');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTMT', '3.50998','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDRON', '4.189239','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDUYU', '34.965156','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDUAH', '26.578811','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSAR', '3.75025','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLAK', '8670.810383','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDOMR', '0.385014','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDJPY', '108.48142857','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBHD', '0.377059','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKPW', '900','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('PLATINUM1UZ999', '0.001223','2018-08-02 07:58:38');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDQAR', '3.641223','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDUSD', '1','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMKD', '54.587537','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBGN', '1.733375','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDXAF', '581.780045','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDJMD', '135.72','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDAUD', '1.432977','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDETB', '28.750075','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDYER', '250.349279','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDVND', '23320.039705','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBRX', '3.7485','2018-08-01 16:15:02');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCUC', '1','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDINR', '69.15691','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDFKP', '0.787687','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDITL', '1700.272217','2017-02-24 19:34:31');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGHS', '5.350427','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDNAD', '14.859434','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSTD', '21050.59961','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDPEN', '3.337966','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCHF', '0.991417','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDAED', '3.673181','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDUGX', '3758.781265','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBBD', '2','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKES', '101.16','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDECS', '25000','2017-02-24 19:27:22');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDHUX', '274.959991','2018-08-01 10:30:05');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDHTG', '91.852387','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGBP', '0.787687','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTZS', '2299.2','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXOF', '581.780045','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLRD', '193.750097','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDDEM', '1.71745','2015-06-22 07:35:00');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDEUR', '0.886918','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGEL', '2.735','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSEK', '9.420717','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCDF', '1642.05248','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDNOK', '8.6978','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDAFN', '79.809','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDVEF', '248487.642241','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDVES', '5906.500631','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMVR', '15.400026','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDWST', '2.615465','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGTQ', '7.691784','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSDG', '44.942172','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDHNL', '24.383472','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLKR', '175.759249','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDRWF', '905.752975','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXPD', '0.00073966','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGIP', '0.787687','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTND', '2.989669','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBSD', '1','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTRY', '5.7878','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCUP', '25.75','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLYD', '1.39479','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDDOP', '50.245811','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKHR', '4066.082541','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTJS', '9.406067','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSVC', '8.717903','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBDT', '84.22283','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDDKK', '6.623185','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('PALLADIUM1OZ', '0.001099','2018-08-02 07:58:38');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBMD', '1','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSOS', '576.370572','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBND', '1.350697','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSGD', '1.364161','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSCR', '13.680497','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMAD', '9.652403','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDRSD', '104.546739','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDAZN', '1.7025','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKYD', '0.830287','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDZMW', '13.306499','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSZL', '14.859512','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLTL', '3.0487','2015-06-22 08:39:00');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSYP', '514.98668','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDFRF', '1700.272217','2017-02-27 21:21:09');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMDL', '18.062045','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDDJF', '178.05','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDHUF', '284.623','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCNH', '6.926316','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMXV', '3.079749','2018-08-01 13:30:00');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTMT', '3.50998','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDRON', '4.189239','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDUYU', '34.965156','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDUAH', '26.578811','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSAR', '3.75025','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLAK', '8670.810383','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDOMR', '0.385014','2019-06-07 01:59:59');
+    
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBHD', '0.377059','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKPW', '900','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('PLATINUM1UZ999', '0.001223','2018-08-02 07:58:38');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDQAR', '3.641223','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDUSD', '1','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMKD', '54.587537','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBGN', '1.733375','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXAF', '581.780045','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDJMD', '135.72','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDAUD', '1.432977','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDETB', '28.750075','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDYER', '250.349279','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDVND', '23320.039705','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBRX', '3.7485','2018-08-01 16:15:02');
+    
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBTC', '0.000128210632','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCAD', '1.33503','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDZAR', '15.011093','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXPT', '0.00124457','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('COPPERHIGHGRADE', '0.363702','2018-08-02 07:58:38');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXCD', '2.70255','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSRD', '7.458','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBYN', '2.091669','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBIF', '1828.453744','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLBP', '1506.534699','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMNT', '2453.75','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDZWL', '322.355011','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDIQD', '1188.846855','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKZT', '383.422323','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMXN', '19.6572','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCLP', '692.9','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSIT', '216.486755','2015-07-27 13:25:00');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMZN', '62.242136','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDAMD', '477.503942','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCLF', '0.024244','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGGP', '0.787687','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDJOD', '0.709001','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDIDR', '14191','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGNF', '9102.330265','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMRO', '357','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBRL', '3.87989','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMWK', '789.809303','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBOB', '6.884801','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDEGP', '16.7755','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGMD', '49.25','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDARS', '44.8903','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLTC', '0.2607561929595828','2018-08-02 21:56:02');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDDZD', '119.316147','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMYR', '4.157573','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDNZD', '1.510574','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSSP', '130.2634','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDPGK', '3.374531','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDERN', '14.996582','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDAWG', '1.799996','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDVUV', '111.691222','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDANG', '1.868168','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBYR', '20020','2016-06-30 13:27:21');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDAOA', '333.7815','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMGA', '3652.386314','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBTN', '69.043552','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKWD', '0.303834','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDPAB', '1','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSLL', '8390','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDILS', '3.5962','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSTN', '21.82','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKMF', '436.749217','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCOP', '3294.132715','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDISK', '123.529979','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDIMP', '0.787687','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDNIO', '32.830002','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBWP', '10.87115','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDHRK', '6.5823','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBZD', '2.008428','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDNGN', '359.189263','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCZK', '22.739373','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMUR', '35.6295','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMRU', '36.775','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDJEP', '0.787687','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSBD', '8.227108','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCRC', '586.397327','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXPF', '105.837466','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXDR', '0.719438','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDGYD', '208.651986','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDIEP', '0.699154','2015-06-23 04:53:00');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('XAUX', '0.000816','2018-08-02 07:58:38');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDPYG', '6267.197196','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXAU', '0.00074992','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDNPR', '110.470775','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDRUB', '65.0799','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMMK', '1521.408611','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCVE', '98.73','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USD', '1','2018-08-02 07:00:00');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDUZS', '8481.534984','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLSL', '14.859434','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDDOGE', '5455.376655570431','2018-08-02 21:56:02');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDLVL', '0.62055','2015-06-22 08:37:00');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDHKD', '7.84135','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTTD', '6.748234','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKGS', '68.706253','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDXAG', '0.06716819','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('SILVER1OZ999NY', '0.064809','2018-08-02 07:58:38');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDPLN', '3.7895','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDMOP', '8.047035','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTOP', '2.286618','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDBAM', '1.734548','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDFJD', '2.145105','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDPKR', '146.411888','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDALL', '108.578441','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDSHP', '0.787687','2019-06-07 01:59:59');
+    insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDIRR', '42529.9919188','2019-06-07 01:59:5');
+
+    insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDKRW', '1182','2019-06-04 14:59:59');
+insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDKRW', '1178.205','2019-06-07 01:59:59');
+insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDJPY', '108.32966667','2019-06-04 14:59:59');
+insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDJPY', '108.48142857','2019-06-07 01:59:59');
+insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDCNY', '6.909','2019-06-04 14:59:59');
+insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDCNY', '6.9098','2019-06-07 01:59:59');
+insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDTWD', '31.434787','2019-06-04 14:59:59');
+insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTWD', '31.3299','2019-06-07 01:59:59');
+insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDPHP', '51.825','2019-06-04 14:59:59');
+insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDPHP', '51.7055','2019-06-07 01:59:59');
+insert into `EXRATE` (`rate_name`,`exrate`,`UTC`) VALUES ('USDTHB', '31.3585','2019-06-04 14:59:59');
+insert into `EXRATE` (` rate_name`,`exrate `,`UTC`) VALUES ('USDTHB', '31.3','2019-06-07 01:59:59');
+
+insert into `EXRATE` (`
+rate_name`,`exrate
+`,`UTC`) VALUES
+('USDKRW', '1182','2019-06-04 14:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
@@ -947,380 +797,40 @@ rate_name`,`exrate
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDBTC', '0.000128210632','2019-06-07 01:59:59');
+('USDJPY', '108.32966667','2019-06-04 14:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDCAD', '1.33503','2019-06-07 01:59:59');
+('USDJPY', '108.48142857','2019-06-07 01:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDZAR', '15.011093','2019-06-07 01:59:59');
+('USDCNY', '6.909','2019-06-04 14:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDXPT', '0.00124457','2019-06-07 01:59:59');
+('USDCNY', '6.9098','2019-06-07 01:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('COPPERHIGHGRADE', '0.363702','2018-08-02 07:58:38');
+('USDTWD', '31.434787','2019-06-04 14:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDXCD', '2.70255','2019-06-07 01:59:59');
+('USDTWD', '31.3299','2019-06-07 01:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDSRD', '7.458','2019-06-07 01:59:59');
+('USDPHP', '51.825','2019-06-04 14:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDBYN', '2.091669','2019-06-07 01:59:59');
+('USDPHP', '51.7055','2019-06-07 01:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDBIF', '1828.453744','2019-06-07 01:59:59');
+('USDTHB', '31.3585','2019-06-04 14:59:59');
 insert into `EXRATE` (`
 rate_name`,`exrate
 `,`UTC`) VALUES
-('USDLBP', '1506.534699','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMNT', '2453.75','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDZWL', '322.355011','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDIQD', '1188.846855','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKZT', '383.422323','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMXN', '19.6572','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCLP', '692.9','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSIT', '216.486755','2015-07-27 13:25:00');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMZN', '62.242136','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDAMD', '477.503942','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCLF', '0.024244','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGGP', '0.787687','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDJOD', '0.709001','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDIDR', '14191','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGNF', '9102.330265','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMRO', '357','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBRL', '3.87989','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMWK', '789.809303','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBOB', '6.884801','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDEGP', '16.7755','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGMD', '49.25','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDARS', '44.8903','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLTC', '0.2607561929595828','2018-08-02 21:56:02');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDDZD', '119.316147','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMYR', '4.157573','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDNZD', '1.510574','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSSP', '130.2634','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDPGK', '3.374531','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDERN', '14.996582','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDAWG', '1.799996','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDVUV', '111.691222','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDANG', '1.868168','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBYR', '20020','2016-06-30 13:27:21');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDAOA', '333.7815','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMGA', '3652.386314','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBTN', '69.043552','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKWD', '0.303834','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDPAB', '1','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSLL', '8390','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDILS', '3.5962','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSTN', '21.82','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKMF', '436.749217','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCOP', '3294.132715','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDISK', '123.529979','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDIMP', '0.787687','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDNIO', '32.830002','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBWP', '10.87115','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDHRK', '6.5823','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBZD', '2.008428','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDNGN', '359.189263','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCZK', '22.739373','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMUR', '35.6295','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMRU', '36.775','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDJEP', '0.787687','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSBD', '8.227108','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCRC', '586.397327','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDXPF', '105.837466','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDXDR', '0.719438','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDGYD', '208.651986','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDIEP', '0.699154','2015-06-23 04:53:00');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('XAUX', '0.000816','2018-08-02 07:58:38');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDPYG', '6267.197196','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDXAU', '0.00074992','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDNPR', '110.470775','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDRUB', '65.0799','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMMK', '1521.408611','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDCVE', '98.73','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USD', '1','2018-08-02 07:00:00');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDUZS', '8481.534984','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLSL', '14.859434','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDDOGE', '5455.376655570431','2018-08-02 21:56:02');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDLVL', '0.62055','2015-06-22 08:37:00');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDHKD', '7.84135','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTTD', '6.748234','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDKGS', '68.706253','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDXAG', '0.06716819','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('SILVER1OZ999NY', '0.064809','2018-08-02 07:58:38');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDPLN', '3.7895','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDMOP', '8.047035','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDTOP', '2.286618','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDBAM', '1.734548','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDFJD', '2.145105','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDPKR', '146.411888','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDALL', '108.578441','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDSHP', '0.787687','2019-06-07 01:59:59');
-insert into `EXRATE` (`
-rate_name`,`exrate
-`,`UTC`) VALUES
-('USDIRR', '42529.9919188','2019-06-07 01:59:5');
+('USDTHB', '31.3','2019-06-07 01:59:59');

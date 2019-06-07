@@ -93,12 +93,12 @@ export default {
                 {
                     router: "home",
                     iClass:'fa fa-home fa-2x',
-                    text:'首頁',
+                    text:'匯率換算',
                 },
                 {
-                    router: "bind",
+                    router: "activity",
                     iClass:'fa fa-star fa-2x',
-                    text:'機台',
+                    text:'旅遊資訊',
                 },
                 {
                     router: "barcode",

@@ -4,7 +4,7 @@ import Home from './views/Home.vue';
 import Login from './views/Login.vue';
 import SignUp from './views/SignUp.vue';
 import SendBarcode from './views/SendBarcode.vue';
-import MachineBinding from './views/MachineBinding.vue';
+import Activity from './views/Activity.vue';
 import UsePercentage from './views/UsePercentage.vue';
 import Usecentage from './views/UseCentage.vue';
 
@@ -33,9 +33,9 @@ const router = new Router({
       component: SendBarcode
     },
     {
-      path: '/bind',
-      name: 'bind',
-      component: MachineBinding
+      path: '/activity',
+      name: 'activity',
+      component: Activity
     },
     {
       path: '/percentage',
@@ -59,22 +59,16 @@ const router = new Router({
 });
 
 // router.beforeEach((to, from, next) => {
-
-//   console.log('====================================');
-//   console.log(from);
-//   console.log('====================================');
 //   //初始為登入畫面
 //   const publicPages = ['/login'];
 //   const authRequired = !publicPages.includes(to.path);
 //   const loggedIn = localStorage.getItem('token');
+
 //   //如果尚未取得登入token則返回登入頁面
 //   if (authRequired && loggedIn == null) {
 //     return next('/login');
 //   }
-//   //如果關閉頁面沒有登出則直接進入首頁  
-//   if (!authRequired && loggedIn != null) {
-//     next('/');
-//   }
+
 //   //一般狀況往下進行.
 //   next();
 // })

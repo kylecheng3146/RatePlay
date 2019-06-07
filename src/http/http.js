@@ -137,9 +137,24 @@ export const http = {
         return get("api/wire/GetByWire", paramObj);
     },
 
+    //取得匯率
+    getExrate: function (paramObj) {
+        return get("api/rate/GetByRateName", paramObj);
+    },
+
+    // 取得活動資訊
+    getActivity: function (paramObj) {
+        return get("api/activity", paramObj);
+    },
+
     // 取得要綁定的機台號碼
     getBindMachine: function (paramObj) {
         return get("api/machine/GetByMachineCode",paramObj);
+    },
+
+    // 取得要綁定的機台號碼
+    getCountries: function (paramObj) {
+        return get("api/countries", paramObj);
     },
 
     put: function(paramObj) {

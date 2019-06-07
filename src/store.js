@@ -35,10 +35,24 @@ export default new Vuex.Store({
     AUTHENTICATE(context,data){
         return http.authenticate(data);
     },
+    //取得國家
+    GetCountries(context, data) {
+        return http.getCountries(data);
+    },
 
     //機台綁定
     BindMachine(context, data){
         return http.getBindMachine(data);
+    },
+
+    //取得所有活動資訊
+    GetActivity(context, data) {
+      return http.getActivity(data);
+    },
+
+    //取得所有活動資訊
+    GetLocalCurrency(context, data) {
+      return http.getExrate(data);
     }
   },
   mutations: {

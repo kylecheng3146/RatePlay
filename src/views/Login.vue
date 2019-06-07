@@ -74,8 +74,8 @@ export default {
         //登入按鈕事件
         login() {
             var value = {
-                "username" : this.account,
-                "password" : this.password
+                "Email" : this.account,
+                "Password" : this.password
             }
             //檢查帳號
             this.accountState = this.account.length == 0 ? false : null
@@ -93,11 +93,15 @@ export default {
             }
 
             this.$store.dispatch('AUTHENTICATE',value).then(response => {
+
+                console.log('====================================');
+                console.log(response);
+                console.log('====================================');
                 //如果帳號密碼錯誤導致登入失敗顯示alert
-                if(this.account != response.data.userId) {
+                if(this.account != response.data.email) {
                     this.dismissCountDown = this.dismissSecs
                 } else {
-                    let token = response.data.salt;
+                    let token = response.data.token;
                     // login successful if there's a jwt token in the response
                     if (token != null) {
                         // store user details and jwt token in local storage to keep user logged in between page refreshes

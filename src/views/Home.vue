@@ -18,16 +18,16 @@
 				<img class="country-flag" :src="imageSrc + 'TW/flat/64.png' "/>
 				<h2 class="country-name">台灣</h2>
 				<p>匯率: 1 TWD</p>
-				<input id="currencyInput" class="currency-input" @keyup="calcInput_1" :value="calc2">
+				<input id="currencyInput" type="number" class="currency-input" @keyup="calcInput_1" :value="calc2">
 			</div>
 			<!-- input field 2 -->
 			<div class="col">
 				<template v-for="country in countries">
 					<template v-if="selected === country.name" v-model="countryRate">
-						<img class="country-flag" :src="imageSrc + country.image"/>
+						<img class="country-flag" :src="imageSrc + country.code + '/flat/64.png'"/>
 						<h2 class="country-name">{{country.name}}</h2>
 						<p class="">匯率: {{country.rate}} {{country.money}}</p>
-						<input class="currency-input" @keyup="calcInput_2" :value="calc1">
+						<input class="currency-input" type="number" @keyup="calcInput_2" :value="calc1">
 					</template>
 				</template>
 			</div>
@@ -42,55 +42,65 @@ export default {
   data () {
     return {
     selected: "Brazil",
-		countryRate: 2.5,
+		countryRate:'' ,
+		currencyRate :'',
 		calc2: "",
 		calc1: "",
 		imageSrc: "https://www.countryflags.io/",
 		firstInputSelected: true,
 		input: document.getElementById("currencyInput"),
 		countries: [
-			{
-				name: "巴西",
-				money: "Reais",
-				rate: 2.5,
-				image: "BR/flat/64.png"
-			},
-			{
-				name: "德國",
-				money: "Euro",
-				rate: 0.67,
-				image: "DE/flat/64.png"
-			},
-			{
-				name: "美國",
-				money: "USD",
-				rate: 30,
-				image: "US/flat/64.png"
-			},
-			{
-				name: "加拿大",
-				money: "CAD",
-				rate: 0.94,
-				image: "CA/flat/64.png"
-			},
-			{
-				name: "紐西蘭",
-				money: "NZD",
-				rate: 1.09,
-				image: "NZ/flat/64.png"
-			},
-			{
-				name: "日本",
-				money: "YEN",
-				rate: 88.51,
-				image: "JP/flat/64.png"
-			}
+			// 	name: "日本",
+			// 	money: "YEN",
+			// 	rate: 88.51,
+			// 	image: "JP/flat/64.png"
+			// }
 		]
     }
+  },
+  created() {
+	  this.getLocalCurrency()
+
+	  this.getCountries()
   },
   components: {
   },
 	methods: {
+
+		//取得下拉選單的國家
+		getCountries(){
+  			this.$store.dispatch('GetCountries',"").then(response => {
+                if(response.status === 404) {
+                    this.dismissCountDown = this.dismissSecs
+                    this.error_message = response.statusText
+                    loader.hide()
+                    return
+				}
+				response.data.forEach(element => {
+                    //儲存線材品號資訊
+                    // this.$store.commit('SET_WIRE_INFO', { data: element })
+                    this.countries.push(element)
+                });
+                loader.hide()
+			})
+		},
+		//取得當地貨幣
+		getLocalCurrency(){
+			var value = { "rate_name" : "USDTWD" }
+			let loader = this.$loading.show(); 
+            // ---------- start to http client connecting ----------
+            this.$store.dispatch('GetLocalCurrency',value).then(response => {
+                if(response.status === 404) {
+                    this.dismissCountDown = this.dismissSecs
+                    this.error_message = response.statusText
+                    loader.hide()
+                    return
+				}
+				
+				this.currencyRate = response.data.exrate1
+                loader.hide()
+			})
+		},
 		calcInput_1: function(e, rate){
       this.firstInputSelected = true;
 			this.calculate(e, rate);
@@ -100,12 +110,15 @@ export default {
 			this.calculate(e, rate);
 		},
 		updateInputs: function(){
-      var selected;
+	  var selected;
+
 			for(var i = 0; i < this.countries.length; i++){
 				if(this.selected == this.countries[i].name){
 					selected = this.countries[i];
 				}
 			}
+
+
 			this.countryRate = selected.rate;
 			var input2 = parseFloat(document.getElementById("currencyInput").value);
 			if(isNaN(input2)){

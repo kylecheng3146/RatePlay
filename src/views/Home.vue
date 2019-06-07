@@ -26,7 +26,7 @@
 					<template v-if="selected === country.name" v-model="countryRate">
 						<img class="country-flag" :src="imageSrc + country.code + '/flat/64.png'"/>
 						<h2 class="country-name">{{country.name}}</h2>
-						<p class="">匯率: {{country.rate}} {{country.money}}</p>
+						<p class="">匯率: {{countryRate}} {{country.currency}}</p>
 						<input class="currency-input" type="number" @keyup="calcInput_2" :value="calc1">
 					</template>
 				</template>
@@ -59,7 +59,7 @@ export default {
     }
   },
   created() {
-	  this.getLocalCurrency()
+	  this.getLocalCurrency("USDTWD")
 
 	  this.getCountries()
   },
@@ -69,6 +69,7 @@ export default {
 
 		//取得下拉選單的國家
 		getCountries(){
+			let loader = this.$loading.show(); 
   			this.$store.dispatch('GetCountries',"").then(response => {
                 if(response.status === 404) {
                     this.dismissCountDown = this.dismissSecs
@@ -85,8 +86,8 @@ export default {
 			})
 		},
 		//取得當地貨幣
-		getLocalCurrency(){
-			var value = { "rate_name" : "USDTWD" }
+		getLocalCurrency(rate_name){
+			var value = { "rate_name" : rate_name }
 			let loader = this.$loading.show(); 
             // ---------- start to http client connecting ----------
             this.$store.dispatch('GetLocalCurrency',value).then(response => {
@@ -111,22 +112,43 @@ export default {
 		},
 		updateInputs: function(){
 	  var selected;
-
 			for(var i = 0; i < this.countries.length; i++){
 				if(this.selected == this.countries[i].name){
 					selected = this.countries[i];
+					//儲存所選之國家
+					
 				}
 			}
 
+			//取得所選國家的匯率
+			var value = { "rate_name" : "USD"+selected.currency }
+			//儲存所選的國家
+			localStorage.setItem('localCurrency', "USD"+selected.currency)
+			let loader = this.$loading.show(); 
+            // ---------- start to http client connecting ----------
+            this.$store.dispatch('GetLocalCurrency',value).then(response => {
+                if(response.status === 404) {
+                    this.dismissCountDown = this.dismissSecs
+                    this.error_message = response.statusText
+                    loader.hide()
+                    return
+				}
+				//即時寫入
+				
+				if(response.data.ex)
 
-			this.countryRate = selected.rate;
-			var input2 = parseFloat(document.getElementById("currencyInput").value);
-			if(isNaN(input2)){
-				this.calc2 = "";
-				this.calc1 = "";
-				return;
-			}
-			this.calc1 = (input2 * this.countryRate).toFixed(2);
+
+				this.countryRate = (response.data.exrate1 / this.currencyRate).toFixed(4)
+				var input2 = parseFloat(document.getElementById("currencyInput").value);
+				//如果參數錯誤則將欄位清空
+				if(isNaN(input2)){
+					this.calc2 = "";
+					this.calc1 = "";
+					return;
+				}
+				this.calc1 = (input2 * (response.data.exrate1 / this.currencyRate)).toFixed(2)
+			})
+			loader.hide()
 		},
 		calculate: function(e, value){
 			value = parseFloat(e.target.value);

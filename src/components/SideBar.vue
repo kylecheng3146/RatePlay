@@ -92,18 +92,18 @@ export default {
             items: [
                 {
                     router: "home",
-                    iClass:'fa fa-home fa-2x',
+                    iClass:'fa fa-exchange fa-2x',
                     text:'匯率換算',
                 },
                 {
-                    router: "activity",
-                    iClass:'fa fa-star fa-2x',
-                    text:'旅遊資訊',
+                    router: "diff",
+                    iClass:'fa fa-bars fa-2x',
+                    text:'匯率走勢',
                 },
                 {
-                    router: "barcode",
-                    iClass:'fa fa-barcode fa-2x',
-                    text:'工單',
+                    router: "activity",
+                    iClass:'fa fa-info-circle fa-2x',
+                    text:'旅遊資訊',
                 },
                 {
                     router: "",

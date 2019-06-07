@@ -113,55 +113,59 @@ export function put(url, data = {}) {
 }
 // 將封裝的方法打包起來
 export const http = {
-    get: function(paramObj) {
-    return get("", paramObj);
-    },
+         get: function(paramObj) {
+           return get("", paramObj);
+         },
 
-    //驗證登入 jwt token
-    authenticate: function(paramObj) {
-    return post("api/login/authenticate", paramObj);
-    },
+         //驗證登入 jwt token
+         authenticate: function(paramObj) {
+           return post("api/login/authenticate", paramObj);
+         },
 
-    //傳送工單與機器號碼查詢寫入資料
-    addworkData: function(paramObj) {
-    return post("api/work/AddData", paramObj);
-    },
+         //傳送工單與機器號碼查詢寫入資料
+         addworkData: function(paramObj) {
+           return post("api/work/AddData", paramObj);
+         },
 
-    // 取得派工單
-    getSendJobData: function(paramObj) {
-    return get("api/SendJob/GetBySendJob", paramObj);
-    },
+         // 取得派工單
+         getSendJobData: function(paramObj) {
+           return get("api/SendJob/GetBySendJob", paramObj);
+         },
 
-    // 取得要綁定的線材批號
-    getBindWire: function (paramObj) {
-        return get("api/wire/GetByWire", paramObj);
-    },
+         // 取得要綁定的線材批號
+         getBindWire: function(paramObj) {
+           return get("api/wire/GetByWire", paramObj);
+         },
 
-    //取得匯率
-    getExrate: function (paramObj) {
-        return get("api/rate/GetByRateName", paramObj);
-    },
+         //取得匯率
+         getExrate: function(paramObj) {
+           return get("api/rate/GetByRateName", paramObj);
+         },
 
-    // 取得活動資訊
-    getActivity: function (paramObj) {
-        return get("api/activity", paramObj);
-    },
+         // 取得活動資訊
+         getActivity: function(paramObj) {
+           return get("api/activity", paramObj);
+         },
 
-    // 取得要綁定的機台號碼
-    getBindMachine: function (paramObj) {
-        return get("api/machine/GetByMachineCode",paramObj);
-    },
+         // 取得要綁定的機台號碼
+         getBindMachine: function(paramObj) {
+           return get("api/machine/GetByMachineCode", paramObj);
+         },
 
-    // 取得要綁定的機台號碼
-    getCountries: function (paramObj) {
-        return get("api/countries", paramObj);
-    },
+         // 取得國家
+         getCountries: function(paramObj) {
+           return get("api/countries", paramObj);
+         },
 
-    put: function(paramObj) {
-    return put("api/users", paramObj);
-    },
-    delete: function(paramObj) {
-    return remove("api/users", paramObj);
-    }
+         // 取得匯率歷史紀錄
+         getHistoryRate: function (paramObj) {
+             return get("api/rate/GetHistoryRate", paramObj);
+         },
 
-};
+         put: function(paramObj) {
+           return put("api/users", paramObj);
+         },
+         delete: function(paramObj) {
+           return remove("api/users", paramObj);
+         }
+       };

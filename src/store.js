@@ -50,6 +50,10 @@ export default new Vuex.Store({
       return http.getActivity(data);
     },
 
+    //取得所有匯率資料
+    GetHistoryCurrency(context, data) {
+      return http.getHistoryRate(data);
+    },
     //取得所有活動資訊
     GetLocalCurrency(context, data) {
       return http.getExrate(data);

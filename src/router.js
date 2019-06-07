@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Login from './views/Login.vue';
 import SignUp from './views/SignUp.vue';
-import SendBarcode from './views/SendBarcode.vue';
+import RateDiff from './views/RateDiff.vue';
 import Activity from './views/Activity.vue';
 import UsePercentage from './views/UsePercentage.vue';
 import Usecentage from './views/UseCentage.vue';
@@ -28,9 +28,9 @@ const router = new Router({
       component: SignUp
     },
     {
-      path: '/barcode',
-      name: 'barcode',
-      component: SendBarcode
+      path: '/diff',
+      name: 'diff',
+      component: RateDiff
     },
     {
       path: '/activity',

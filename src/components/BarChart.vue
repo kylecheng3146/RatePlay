@@ -5,8 +5,12 @@
 
 <script>
 export default {
+  mounted() {
+    this.getHistoryCurrency()
+  },
   data () {
     return {
+      items : [],
       title: 'test',
       chartType: 'Column',
       seriesColor: '#6fcd98',
@@ -24,21 +28,33 @@ export default {
         series: [{
           name: '契約用量',
           color: '#ffb300',
-          data: [1, 2, 3, 4, 5, 6]
-        }, {  
-          name: '尖峰用電量',
-          color: '#43a047',
-          data: [11, 22, 33, 44, 55, 66]
-        }, {  
-          name: '半尖峰用電量',
-          color: '#f4511e',
-          data: [5, 32, 24, 18, 9, 44]
-        }, {  
-          name: '離峰用電量',
-          color: '#039be5',
-          data: [23, 41, 7, 27, 38, 16]
+          data: [ this.items ]
         }]
       }
+    }
+  },
+  methods: {
+     getHistoryCurrency(){
+      var value = {
+        "rate_name" : localStorage.getItem('localCurrency')
+      }
+      this.$store.dispatch('GetHistoryCurrency',value).then(response => {
+          if(response.status === 404) {
+              this.dismissCountDown = this.dismissSecs
+              this.error_message = response.statusText
+              loader.hide()
+              return
+          }
+
+          response.data.forEach(element => {
+              //儲存線材品號資訊
+              
+          });
+          this.items = new Array(1,2,3);
+          console.log('====================================');
+    console.log(this.items);
+    console.log('====================================');
+			})
     }
   }
 }

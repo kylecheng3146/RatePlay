@@ -74,7 +74,7 @@
 
             <ul class="logout">
                 <li>
-                   <router-link :to="{name:'login'}"  v-on:click.native="logout">
+                   <router-link v-on:click.native="logout" :to="{name:'login'}" >
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                             登出
@@ -96,14 +96,14 @@ export default {
                     text:'首頁',
                 },
                 {
+                    router: "bind",
+                    iClass:'fa fa-star fa-2x',
+                    text:'機台',
+                },
+                {
                     router: "barcode",
                     iClass:'fa fa-barcode fa-2x',
                     text:'工單',
-                },
-                {
-                    router: "",
-                    iClass:'fa fa-star fa-2x',
-                    text:'',
                 },
                 {
                     router: "",
@@ -120,7 +120,7 @@ export default {
     },
     methods: {
         logout(){
-            // localStorage.removeItem('user')
+            localStorage.removeItem('token')
         }
     }
 }

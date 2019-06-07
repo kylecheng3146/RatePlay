@@ -266,14 +266,11 @@ export default {
     nameSearch: function() {
       var _self = this;
 
-      //console.log('A');
       http.get().then(response => {
-        console.log(response);
         //var arr = ["];
         var newArr = response.filter(function(element, index) {
           //
           if (index == 0) {
-            console.log(element);
             element.cusid = "施耐德";
             
             element.voltage = element.voltage + "(V)";
@@ -283,7 +280,6 @@ export default {
             return element; 
           }
         });
-        // console.log(newArr);
         _self.items = newArr;
       });
     },

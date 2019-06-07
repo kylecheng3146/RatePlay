@@ -1,38 +1,38 @@
 //登入頁面框
 
-$original-color = #248f81
-$base-color = #fff
+$color-original = #248f81
+$color-white = #fff
 
 /* do not group these rules */
 *::-webkit-input-placeholder {
-    color: $original-color
+    color: $color-original
 }
 *:-moz-placeholder {
     /* FF 4-18 */
-    color: $original-color
+    color: $color-original
     opacity: 1
 }
 *::-moz-placeholder {
     /* FF 19+ */
-    color: $original-color
+    color: $color-original
     opacity: 1
 }
 *:-ms-input-placeholder {
     /* IE 10+ */
-    color: $original-color
+    color: $color-original
 }
 *::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: $original-color
+    color: $color-original
 }
 *::placeholder {
     /* modern browser */
-    color: $original-color
+    color: $color-original
 }
 
 .login-panel{
     width: 480px
-    height: 480px
+    height: 600px
     margin-top: 50px
     // background-color: #152330
     -webkit-box-sizing: border-box /* Safari/Chrome, other WebKit */
@@ -40,9 +40,40 @@ $base-color = #fff
     box-sizing: border-box         /* Opera/IE 8+ */
     
     //輸入框
-    input,img{
-        margin-top:5%
-        border-radius: 0px
+    input{
+        margin-top:10%
+        background-color: transparent
+        border-bottom-color: $color-white
+        border-left-color: $color-original
+        border-right-color: $color-original
+        border-top-color: $color-original
+        color: $color-white;
+    }
+
+    input:focus{
+        border-color: $color-original
+        background-color: transparent
+        box-shadow: inset 0 1px 1px $color-original, 0 0 8px $color-original;
+    }
+
+    input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color-white;
+        opacity: 1; /* Firefox */
+    }
+
+    //判斷錯誤的框框
+    .is-invalid,.is-invalid:focus{
+        border-bottom-color: #ff1744
+        border-left-color: $color-original
+        border-right-color: $color-original
+        border-top-color: $color-original
+        color: $color-white;
+        box-shadow: inset 0 1px 1px $color-original, 0 0 8px $color-original;
+    }
+
+    //logo
+    img {
+        margin-bottom: 5rem
     }
 
     //登入按鈕
@@ -51,28 +82,37 @@ $base-color = #fff
         right: 0
         border-radius: 0px
         position: absolute
-        background-color: $base-color
-        color: $original-color
+        background-color: $color-white
+        color: $color-original
         font-weight: 500
         border-radius: 20px
     }
 
     button:hover{
-        background-color: $base-color
-        color: $original-color
-    }
-        
-    .invalid-feedback{
-        margin-top: 0px
-        background-color: #ff1744
-        padding: 5px    
-        color: $base-color
-        font-size: 18px
+        background-color: $color-white
+        color: $color-original
     }
 
-    
-
+    p{
+        color:$color-white
+        font-size: 1.3 em
+        font-weight: 999
+        text-align: right
+    }
 }
+
+//錯誤提示.    
+.invalid-feedback{
+    margin-top: 0px
+    background-color: #ff1744
+    padding: 5px    
+    color: $color-white
+    font-size: 18px
+}
+
+p:hover
+    cursor: pointer
+
 //警告 snackbar
 .alert{
     top: 0

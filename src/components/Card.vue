@@ -2,7 +2,6 @@
     <b-col cols="12" sm="12" md="12" >
         <b-card v-for="item in items"
             :title = "item.title"
-            :tag = "article"
             :class = "item.cardClass"
             >
             <b-card-text> {{ item.text1 }} </b-card-text>

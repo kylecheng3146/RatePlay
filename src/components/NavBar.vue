@@ -1,9 +1,7 @@
 <template>
 <div>
   <b-navbar toggleable="lg" type="dark" variant="info" id="navbar" class="nav">
-    <b-navbar-brand href="#">打牙機</b-navbar-brand>
-
-    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+    <b-navbar-brand href="/"><b-img v-bind="mainProps" :src="images.path" fluid></b-img></b-navbar-brand>
 
     <b-collapse id="nav-collapse" is-nav>
       <!-- <b-navbar-nav>
@@ -25,9 +23,13 @@
           <b-dropdown-item href="#">FA</b-dropdown-item>
         </b-nav-item-dropdown>
  -->
-        <b-nav-item-dropdown right>
+        <b-nav-item-dropdown right no-caret>
           <!-- Using 'button-content' slot -->
           <template slot="button-content"><em><i class="fa fa-user fa-2x"></i></em></template>
+          <b-dropdown-item href="#">個人資料</b-dropdown-item>
+          <b-dropdown-item href="#">設定   </b-dropdown-item>
+          <b-dropdown-item href="#">個人資料</b-dropdown-item>
+          <b-dropdown-item href="#">個人資料</b-dropdown-item>
           <b-dropdown-item href="#">個人資料</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
@@ -35,3 +37,21 @@
   </b-navbar>
 </div>
 </template>
+
+
+<script>
+// @ is an alias to /src
+export default {
+    name: 'login',
+    components: {
+    },
+    data() {
+        return {
+            images: {
+                path: require('../assets/OFCO.png')
+            },
+            mainProps: { blank: false, width: 100, height: 100, class: 'm1' }
+        }
+    },
+}
+</script>

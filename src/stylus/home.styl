@@ -1,26 +1,15 @@
 @import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css')
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:300')
-@import url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/286148/Montserrat-Regular.ttf')
 
 
 $color-white = #fff
 $material-gray = #424242
-$background = #248f81
-$font-color = #000
-$blue-dark = #1d2f50
-$blue-med = #5980c3
-$blue-light = #cdd8ed
-
-$font = 'Montserrat', sans-serif
 //當畫面大於768px時套用
 @media screen and (min-width: 1300px) {
 
-  .col-lg-2{
-    left:110px  
-  }
-
   /* Busy table styling */
   table.b-table[aria-busy='false'] {
+    max-width :99%
     margin: 2% 1.3%
     background-color: $color-white
     text-align: center
@@ -28,9 +17,6 @@ $font = 'Montserrat', sans-serif
 }
 
 @media (max-width:1299px) and (min-width:769px) {
-  .col-lg-2{
-    left:80px  
-  }
 
   .card{
     width:  100%+50px
@@ -42,6 +28,7 @@ $font = 'Montserrat', sans-serif
 
   /* Busy table styling */
   table.b-table[aria-busy='false'] {
+    max-width :99%
     margin: 1% 1.5%
     background-color: $color-white
     text-align: center
@@ -50,52 +37,57 @@ $font = 'Montserrat', sans-serif
 
 //當畫面小於768px時套用
 @media screen and (max-width: 768px) {
-  .col-md-2{
-    left : 110px
-  }
 
   .card{
     width:  100%+50px
     height: 100px
     margin-bottom: 5%
     right : 0
-    left : 45px
+    left : 20px
     min-width: 94%
   }
 
   .col-md-4{
     margin: 1% 3%
-    margin-left 60px
   }
 
     /* Busy table styling */
   table.b-table[aria-busy='false'] {
-    margin: 1% 3%
+    max-width :99%
+    margin: 3% 3%
     background-color: $color-white
     text-align: center
-    margin-left 75px
   }
+}
+
+.row [class^=col-] {
+  display: table-cell;
+  float: none;
 }
 
 //首頁的背景顏色與位置
 .container-home
   margin-top : -20px
-  background-color: #e8e8e8
   padding-top: 20px
+  background-color: #248f81
   
 body 
-    margin: 0
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
-    font-size: 1rem
-    font-weight: 300
-    // line-height: 0.5
-    color: $material-gray
-    text-align: left
-    // background-color: $color-white
-    background-color: #248f81
+  margin: 0
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+  font-size: 1rem
+  font-weight: 300
+  // line-height: 0.5
+  
+  color: $material-gray
+  text-align: left
+  background-color: #248f81
 
 input
   margin-bottom: 2%
+
+h3
+  margin-bottom: 10%
+  
 
 .fa-2x 
   font-size: 2em
@@ -181,44 +173,25 @@ input
   }
 }
 
-nav {
-  -webkit-user-select:none
-  -moz-user-select:none
-  -ms-user-select:none
-  -o-user-select:none
-  user-select:none
-  
-  ul,li{
-    outline:0
-    margin:0
-    padding:0
-  }
-}
 
 //
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a 
   color:$color-white
   background-color:#757575
 
-.area 
-  float: left
-  background: #e2e2e2
-  width: 100%
-  height: 100%
-
 #navbar
-  margin-left: 60px
+  min-width: 50% + 50px
 
 .navbar-brand 
-  text-align: center
-  width: 100%
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
 
 .card {
   height: 160px
   line-height: 1
-  right: 40px
-  width:  100%+50px
-  max-width: 15rem
+  width:  100% + 50px
+  max-width: 20rem
   max-height: 200px
   margin-bottom: 5%
   background-color: #fafafa
@@ -443,6 +416,109 @@ g.highcharts-button
 
 text.highcharts-credits 
     display: none
+
+
+
+/** slider color bar*/
+.colorbar 
+    -webkit-appearance: none
+    overflow: hidden
+    width: 220px
+    height: 14px
+    outline: none
+    background: none
+    margin-left: -8px
+    opacity: .88
+		
+
+.colorbar::-webkit-slider-thumb 
+  -webkit-appearance: none
+  position: relative
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 0 10px 15px 10px
+  border-color: transparent transparent $color-white7f7 transparent
+  transition: .2s
+        
+/**
+  color bar 數字標籤
+*/
+.ruler{
+    position: absolute
+    width: 220px
+    margin: -23px 0 0 -5px
+
+  li{
+    float: left
+    font-size: 10px
+    color: #666
+    margin-right: -8px
+  }
+
+  li+li {
+    margin-left: 26px
+  }
+
+  li::after{
+    display: block
+    content:''
+    width: 1px
+    height: 9px
+    background-color: #444
+    position: absolute
+    margin: 0px 0 0 6px
+  }
+}
+
+/* fixed color */
+.highcharts-text-outline
+    opacity: 0
+
+// tspan 
+    // fill: $color-white
+
+path.highcharts-pane
+    fill: none
+    opacity: 0
+
+g.highcharts-axis-labels.highcharts-yaxis-labels text 
+    fill: #ccc !important
+
+path.highcharts-dial
+    fill:red
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+//navbar 下拉選單樣式
+.dropdown-menu{
+  top: 100%
+  min-width: 100%
+  z-index: 1000
+  padding: 0.5rem 0
+  margin: 0.125rem 0 0
+  font-size: 1rem
+  color: #212529
+
+
+  :focus{
+    background-color: $material-gray
+    color: $color-white  
+  }
+}
+
+//
+.card-theme-table-row
+  margin: 4% 4%
+  padding:4% 4%
+  max-width : 92%
+  background-color: #f5f5f5
+  /* box-shadow */
+  -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 0.2px;
+  -moz-box-shadow: rgba(0,0,0,0.8) 0 0 0.2px;
+  box-shadow: rgba(0,0,0,0.8) 0 0 0.2px;
 
 
 

@@ -1,7 +1,7 @@
 <template>  
   <div>
       <!-- 檢查目前頁面如果為login則不要顯示navbar && sidebar -->
-      <div v-if="currentRouteName != 'login'">
+      <div v-if="currentRouteName != 'login' && currentRouteName != 'signup'">
       <component :is="navbar"></component>
       <div @mouseover="mouseOver" @mouseout="mouseOut">
       <component :is="sidebar"></component>
@@ -45,13 +45,13 @@ export default {
     },
     //滑鼠移入的動作，縮小navbar
     mouseOver: function(){
-      document.getElementById("navbar").style.marginLeft = "200px"
-      document.getElementById("navbar").style.transition = ".1s"
+      // document.body.style.marginLeft = "100px"
+      // document.body.style.transition = ".3s"
     },
     //滑鼠移入的動作，放大navbar
     mouseOut: function () {
-      document.getElementById("navbar").style.marginLeft = "60px"
-      document.getElementById("navbar").style.transition = ".1s"
+      // document.body.style.marginLeft = "0px"
+      // document.body.style.transition = ".2s"
     }
   }
 }

@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import CirclerPersentageChart from '../components/CirclerPersentageChart.vue'
-import Card from '../components/Card.vue'
 export default {
   name: 'usage',
   data () {
@@ -118,7 +116,7 @@ export default {
 			this.calc1 = (input2 * this.countryRate).toFixed(2);
 		},
 		calculate: function(e, value){
-			var value = parseFloat(e.target.value);
+			value = parseFloat(e.target.value);
 			if(isNaN(value)){
 				this.calc2 = "";
 				this.calc1 = "";

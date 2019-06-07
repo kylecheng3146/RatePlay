@@ -1,22 +1,25 @@
 <template>
-    <b-container fluid class="bv-example-row">
+    <b-container fluid class="container-home">
         <b-row>
             <b-col lg="4" md="3" sm="1" cols="1">
-                 
+                 <!-- just for layout  -->
             </b-col>
             <!-- 登入頁面 -->
             <b-col class="login-panel" lg="4" md="6" sm="10" cols="10">
                
-                <b-img src="https://picsum.photos/1024/400/?image=41" fluid alt="Responsive image"></b-img>
-                <b-form-input v-model="account"  :state="accountState"  placeholder="帳號"></b-form-input>
+                <b-img :src="images.path" fluid></b-img>
+                <b-form-input v-model="account"  :state="accountState"  placeholder="帳號">></b-form-input>
                 <b-form-input v-model="password" :type="'password'" :state="passwordState" placeholder="密碼"></b-form-input>
+                <p @click="signup">註冊</p>
                 <b-form-invalid-feedback id="input-live-feedback">
                     {{ feedback }}
                 </b-form-invalid-feedback>
                 <b-button block variant="success" @click="login">登入</b-button>
                 
+                
             </b-col>
             <b-col lg="4" md="3" sm="1" cols="1">
+                <!-- just for layout  -->
             </b-col>
         </b-row>
         <b-alert class="" variant="danger" fade 
@@ -30,9 +33,6 @@
 
 
 <script>
-import { http } from "../http/http";
-import axios from 'axios'
-// @ is an alias to /src
 export default {
     name: 'login',
     components: {
@@ -48,6 +48,9 @@ export default {
             dismissCountDown: 0,
             accountState: null,
             passwordState: null,
+            images: {
+                path: require('../assets/OFCO.png')
+            }
         }
     },
     watch: {
@@ -65,45 +68,46 @@ export default {
         countDownChanged(dismissCountDown) {
         this.dismissCountDown = dismissCountDown
         },
-
+        signup() {
+            this.$router.push('/signup')
+        },
         //登入按鈕事件
         login() {
-            // var value = {
-            //     "username" : this.account,
-            //     "password" : this.password
-            // }
-            // // this.$router.push('home')
-            // http.authenticate(value).then(
-            //     response => {
-            //     //檢查帳號
-            //     this.accountState = this.account.length == 0 ? false : null
-            //     this.passwordState = this.password.length == 0 ? false : null
-            //     //判斷顯示提示訊息
-            //     if(this.account.length == 0 && this.password.length ==0){
-            //         this.feedback = "請輸入帳號與密碼"
-            //         return
-            //     } else if(this.account.length == 0) { //帳號沒有輸入
-            //         this.feedback = "請輸入帳號"
-            //         return
-            //     }else if(this.password.length ==0){ //密碼沒有輸入
-            //         this.feedback = "請輸入密碼"
-            //         return
-            //     }
-            //     //如果帳號密碼錯誤導致登入失敗顯示alert
-            //     console.log(response)
-            //     if(this.account != response.userId) {
-            //         this.dismissCountDown = this.dismissSecs
-            //     } else {
-            //         // login successful if there's a jwt token in the response
-            //         if (response.salt != null) {
-            //             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            //             localStorage.setItem('user', response.salt)
-            //             //登入跳轉到首頁頁面
+            var value = {
+                "username" : this.account,
+                "password" : this.password
+            }
+            //檢查帳號
+            this.accountState = this.account.length == 0 ? false : null
+            this.passwordState = this.password.length == 0 ? false : null
+            //判斷顯示提示訊息
+            if(this.account.length == 0 && this.password.length ==0){
+                this.feedback = "請輸入帳號與密碼"
+                return
+            } else if(this.account.length == 0) { //帳號沒有輸入
+                this.feedback = "請輸入帳號"
+                return
+            }else if(this.password.length ==0){ //密碼沒有輸入
+                this.feedback = "請輸入密碼"
+                return
+            }
+
+            this.$store.dispatch('AUTHENTICATE',value).then(response => {
+                //如果帳號密碼錯誤導致登入失敗顯示alert
+                if(this.account != response.data.userId) {
+                    this.dismissCountDown = this.dismissSecs
+                } else {
+                    let token = response.data.salt;
+                    // login successful if there's a jwt token in the response
+                    if (token != null) {
+                        // store user details and jwt token in local storage to keep user logged in between page refreshes
+                        localStorage.setItem('token', token)
+                         this.$store.commit('SET_USER_INFO', { data: response.data })
+                        //登入跳轉到首頁頁面
                         this.$router.push('/')
-            //         }
-            //     }
-            //     }
-            // );
+                    }
+                }
+            });
         }
     },
 }
